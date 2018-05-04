@@ -8,6 +8,6 @@
 </head>
 <body>
 <%="test1.jsp" %>
-    <%="test1.locol" %>
+    <%="test1.github" %>
 </body>
 </html>
