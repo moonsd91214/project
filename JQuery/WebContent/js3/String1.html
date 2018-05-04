@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// 아작스의 대상은 파일이다.
+		// $(태그대상).함수() $.함수(대상변수,)		$.함수(대상파일,)
+		$.ajax('String1.jsp', {
+			success:function(data){
+				alert(data);
+				// body 태그 뒤부분에 data변수 내용 추가 
+				$('body').append(data);
+				
+			}
+		});
+		// 버튼을 클릭하면 string1-1.jsp 내용을 가져와서 div태그 뒤부분에 붙이기
+		$('#btn').click(function(){
+			$.ajax('String1-1.jsp',{
+				success:function(data){
+			$('div').append(data);
+				
+			
+			
+			}
+			});
+		});
+		
+	});
+</script>
+</head>
+<body>
+<!-- js3/string1.html -->
+<input type="button" value="버튼" id="btn">
+<div>내용</div>
+</body>
+</html>
